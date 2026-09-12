@@ -1,0 +1,13 @@
+version = 1
+id = "research"
+description = "Primary-source research plus Exa search and content retrieval."
+detection = ["research deliverable", "web evidence", "company or market research"]
+skills = [
+  "engineering/research",
+  "research/exa/exa-search",
+  "research/exa/exa-contents",
+  "research/exa/build-with-exa",
+  "research/exa/company-research",
+]
+reference_skills = []
+integrations = ["exa"]

@@ -1,0 +1,7 @@
+version = 1
+id = "stripe"
+description = "Project-scoped Stripe integration without globally loading a skill pack."
+detection = ["Stripe SDK dependency", "Stripe API or webhook code"]
+skills = []
+reference_skills = []
+integrations = ["stripe"]

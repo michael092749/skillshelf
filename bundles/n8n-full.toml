@@ -1,0 +1,23 @@
+version = 1
+id = "n8n-full"
+description = "Expose the complete n8n pack. Use only when autonomous specialist discovery outweighs startup context."
+detection = ["explicit request for every n8n specialist to be discoverable"]
+skills = [
+  "automation/n8n/using-n8n-mcp-skills",
+  "automation/n8n/n8n-agents",
+  "automation/n8n/n8n-binary-and-data",
+  "automation/n8n/n8n-code-javascript",
+  "automation/n8n/n8n-code-python",
+  "automation/n8n/n8n-code-tool",
+  "automation/n8n/n8n-error-handling",
+  "automation/n8n/n8n-expression-syntax",
+  "automation/n8n/n8n-mcp-tools-expert",
+  "automation/n8n/n8n-multi-instance",
+  "automation/n8n/n8n-node-configuration",
+  "automation/n8n/n8n-self-hosting",
+  "automation/n8n/n8n-subworkflows",
+  "automation/n8n/n8n-validation-expert",
+  "automation/n8n/n8n-workflow-patterns",
+]
+reference_skills = []
+integrations = ["n8n"]

@@ -1,0 +1,75 @@
+version = 1
+imported_at = "2026-09-12T15:40:45Z"
+
+[policy]
+canonical_precedence = ["codex-personal", "claude-personal", "project-a-project"]
+dedupe = "Collapse byte-identical directories; preserve divergent same-name sources under variants/."
+defaults = "Built-in, system, and bundled vendor skills are excluded."
+
+[[imports]]
+source_id = "codex-personal"
+source = "~/.agents/skills/engineering"
+destination = "library/engineering"
+selection = "all direct skill directories"
+
+[[imports]]
+source_id = "codex-personal"
+source = "~/.agents/skills/productivity"
+destination = "library/productivity"
+selection = "all direct skill directories"
+
+[[imports]]
+source_id = "codex-personal"
+source = "~/.agents/skills"
+destination = "library/google-workspace"
+selection = "gws-*"
+
+[[imports]]
+source_id = "codex-personal"
+source = "~/.agents/skills"
+destination = "library/research/exa"
+selection = "build-with-exa, exa-search, exa-contents, company-research"
+
+[[imports]]
+source_id = "codex-personal"
+source = "~/.agents/skills"
+destination = "library/sales-and-marketing"
+selection = "hormozi-offer, lead-generation"
+
+[[imports]]
+source_id = "codex-personal"
+source = "~/.agents/skills/thermo-nuclear-code-quality-review"
+destination = "library/engineering/thermo-nuclear-code-quality-review"
+selection = "canonical runtime candidate"
+
+[[imports]]
+source_id = "claude-personal"
+source = "~/.claude/skills"
+destination = "library"
+selection = "15 Claude-only runtime names; exact overlaps with codex-personal omitted"
+
+[[imports]]
+source_id = "project-a-project"
+source = "~/project-a/.agents/skills"
+destination = "library/automation/n8n"
+selection = "n8n-* and using-n8n-mcp-skills"
+
+[[imports]]
+source_id = "project-a-project"
+source = "~/project-a/.agents/skills/seo-audit"
+destination = "library/sales-and-marketing/seo-audit"
+selection = "canonical source; Claude project entry is a symlink alias"
+
+[[variants]]
+runtime_name = "thermo-nuclear-code-quality-review"
+source = "~/project-a/.claude/skills/thermo-nuclear-code-quality-review"
+destination = "variants/project-a/engineering/thermo-nuclear-code-quality-review"
+reason = "Differs from canonical source by a trailing newline; preserved rather than normalized."
+
+[excluded]
+paths = [
+  "~/.codex/skills/.system",
+  "~/.codex/plugins/cache",
+  "~/skills/library/media/video/video-shotcraft/.git",
+]
+reason = "Vendor defaults, plugin caches, and nested VCS metadata are not catalog skill content."

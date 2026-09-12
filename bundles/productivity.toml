@@ -1,0 +1,15 @@
+version = 1
+id = "productivity"
+description = "Planning, handoff, teaching, questioning, and agent-document workflows."
+detection = ["explicit request for one of these workflows"]
+skills = [
+  "productivity/grill-me",
+  "productivity/grilling",
+  "productivity/handoff",
+  "productivity/teach",
+  "productivity/to-questionnaire",
+  "productivity/wait-what",
+  "productivity/writing-for-agents",
+]
+reference_skills = []
+integrations = []

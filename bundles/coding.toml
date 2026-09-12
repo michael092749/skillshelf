@@ -1,0 +1,18 @@
+version = 1
+id = "coding"
+description = "Core implementation, diagnosis, design, review, research, and testing workflows."
+detection = ["source code", "package/build manifest", "test or CI configuration"]
+skills = [
+  "engineering/diagnosing-bugs",
+  "engineering/codebase-design",
+  "engineering/code-review",
+  "engineering/domain-modeling",
+  "engineering/prototype",
+  "engineering/research",
+  "engineering/resolving-merge-conflicts",
+  "engineering/tdd",
+  "engineering/wizard",
+  "productivity/writing-for-agents",
+]
+reference_skills = []
+integrations = []

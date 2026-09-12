@@ -1,0 +1,26 @@
+version = 1
+id = "google-workspace"
+description = "Google Calendar, Docs, Drive, Gmail, and Sheets operations."
+detection = ["Google Workspace automation", "Gmail", "Google Calendar", "Google Docs", "Google Drive", "Google Sheets"]
+skills = [
+  "google-workspace/gws-calendar",
+  "google-workspace/gws-calendar-agenda",
+  "google-workspace/gws-calendar-insert",
+  "google-workspace/gws-docs",
+  "google-workspace/gws-docs-write",
+  "google-workspace/gws-drive",
+  "google-workspace/gws-drive-upload",
+  "google-workspace/gws-gmail",
+  "google-workspace/gws-gmail-forward",
+  "google-workspace/gws-gmail-read",
+  "google-workspace/gws-gmail-reply",
+  "google-workspace/gws-gmail-reply-all",
+  "google-workspace/gws-gmail-send",
+  "google-workspace/gws-gmail-triage",
+  "google-workspace/gws-gmail-watch",
+  "google-workspace/gws-sheets",
+  "google-workspace/gws-sheets-read",
+  "google-workspace/gws-workflow-email-to-task",
+]
+reference_skills = []
+integrations = ["google-workspace"]

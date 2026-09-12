@@ -1,0 +1,7 @@
+version = 1
+id = "seo"
+description = "SEO auditing and evidence-backed remediation."
+detection = ["SEO audit", "search performance remediation"]
+skills = ["sales-and-marketing/seo-audit"]
+reference_skills = []
+integrations = []

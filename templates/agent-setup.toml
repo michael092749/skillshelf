@@ -1,0 +1,55 @@
+version = 1
+catalog_id = "personal-skills"
+catalog_commit = "REPLACE_WITH_COMMIT"
+mode = "vendor"
+targets = ["codex", "claude"]
+bundles = []
+
+# Repeat for every resolved skill.
+#[[skills]]
+#id = "engineering/tdd"
+#runtime_name = "tdd"
+#source = "library/engineering/tdd"
+#sha256 = "REPLACE_WITH_TREE_HASH"
+#owned_paths = [
+#  ".agent-setup/skills/tdd",
+#  ".agents/skills/tdd",
+#  ".claude/skills/tdd",
+#]
+
+# Repeat for every configured dependency. Values name variables, not secrets.
+#[[integrations]]
+#id = "n8n"
+#targets = ["codex", "claude"]
+#required_env = ["N8N_API_URL", "N8N_API_KEY"]
+
+# Repeat for each exact config subtree written by the workflow.
+#[[config_ownership]]
+#host = "codex"
+#file = ".codex/config.toml"
+#key = "mcp_servers.n8n"
+#sha256 = "REPLACE_WITH_CANONICAL_VALUE_HASH"
+
+# Canonical value hash = SHA-256 of compact UTF-8 JSON with keys sorted; the
+# validator stringifies TOML-native non-JSON scalar types consistently.
+
+#[[config_ownership]]
+#host = "claude"
+#file = ".mcp.json"
+#key = "mcpServers.n8n"
+#sha256 = "REPLACE_WITH_CANONICAL_VALUE_HASH"
+
+# Record only context files created by the workflow, not pre-existing files.
+#[[owned_files]]
+#kind = "context"
+#path = "AGENTS.md"
+#sha256 = "REPLACE_WITH_FILE_HASH"
+
+# Reference skills are vendored for router access but never host-discovered.
+#[[references]]
+#bundle = "n8n"
+#id = "automation/n8n/n8n-workflow-patterns"
+#runtime_name = "n8n-workflow-patterns"
+#source = "library/automation/n8n/n8n-workflow-patterns"
+#sha256 = "REPLACE_WITH_TREE_HASH"
+#owned_path = ".agent-setup/references/n8n/n8n-workflow-patterns"

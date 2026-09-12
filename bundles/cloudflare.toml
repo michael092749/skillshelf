@@ -1,0 +1,7 @@
+version = 1
+id = "cloudflare"
+description = "Project-scoped Cloudflare integration without globally loading a skill pack."
+detection = ["wrangler configuration", "Cloudflare Worker or Pages project"]
+skills = []
+reference_skills = []
+integrations = ["cloudflare"]

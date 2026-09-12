@@ -1,0 +1,10 @@
+version = 1
+id = "sales-and-marketing"
+description = "Offer design and enriched lead generation."
+detection = ["offer design", "lead list", "ICP research", "outbound research"]
+skills = [
+  "sales-and-marketing/hormozi-offer",
+  "sales-and-marketing/lead-generation",
+]
+reference_skills = []
+integrations = ["exa"]

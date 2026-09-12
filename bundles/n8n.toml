@@ -1,0 +1,22 @@
+version = 1
+id = "n8n"
+description = "Context-light n8n routing: expose one router and vendor specialists as on-demand references."
+detection = ["n8n workflow JSON", "n8n project files", "explicit n8n automation work"]
+skills = ["automation/n8n/n8n-project-router"]
+reference_skills = [
+  "automation/n8n/n8n-agents",
+  "automation/n8n/n8n-binary-and-data",
+  "automation/n8n/n8n-code-javascript",
+  "automation/n8n/n8n-code-python",
+  "automation/n8n/n8n-code-tool",
+  "automation/n8n/n8n-error-handling",
+  "automation/n8n/n8n-expression-syntax",
+  "automation/n8n/n8n-mcp-tools-expert",
+  "automation/n8n/n8n-multi-instance",
+  "automation/n8n/n8n-node-configuration",
+  "automation/n8n/n8n-self-hosting",
+  "automation/n8n/n8n-subworkflows",
+  "automation/n8n/n8n-validation-expert",
+  "automation/n8n/n8n-workflow-patterns",
+]
+integrations = ["n8n"]

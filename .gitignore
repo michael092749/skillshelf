@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+
+# Credentials stay outside the catalog. Keep committed examples only.
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+
+# Locally vendored, not redistributed: 51 MB of bundled media (incl. licensed
+# audio) from an upstream plugin repo. Present locally, excluded from this repo.
+library/media/

@@ -216,6 +216,27 @@ deliberately rather than deleting the destination.
 There is no uninstall command. Removing a skill from a project is deleting its
 directory.
 
+### MCP servers
+
+Skills are instructions; MCP servers are the live connections those instructions
+assume. `install_mcp.py` is the same shape of tool for them:
+
+```bash
+python3 scripts/install_mcp.py list --for-type automation/n8n
+python3 scripts/install_mcp.py install \
+  --project . --host both --server n8n --dry-run
+```
+
+One host-neutral definition in `integrations/servers.toml` renders into
+`.mcp.json` for Claude and `.codex/config.toml` for Codex. Both files are merged
+rather than replaced, an identical entry is a no-op, and an entry that differs
+aborts the whole command before anything is written — the same rules the skill
+installer follows.
+
+Registry values name environment variables (`"${N8N_API_KEY}"` for Claude,
+`env_vars = ["N8N_API_KEY"]` for Codex), so nothing written is a secret and a
+successful install reports which variables are still unset.
+
 ### Updating a skill
 
 Installs never overwrite, so after editing a skill in `library/`, delete the
@@ -229,8 +250,10 @@ library/      canonical skills, grouped by domain; a skill's ID is its path here
               (e.g. engineering/tdd), and its directory is copied whole
 variants/     preserved alternate versions of same-named skills; never implicit
 bundles/      small TOML project profiles naming explicit skill selections
-integrations/ MCP, plugin, and credential recipes — named env vars, never values
-scripts/      install_skills.py (list/select/copy) and audit_catalog.py (validate/measure)
+integrations/ servers.toml (host-neutral MCP definitions) plus plugin and credential
+              recipes — every value names an env var, never holds one
+scripts/      install_skills.py (list/select/copy), install_mcp.py (list/merge server
+              entries), audit_catalog.py (validate/measure)
 tests/        deterministic checks, including index-vs-catalog drift
 index.md      human-readable map of every type and skill
 SOURCES.toml  where each imported skill came from

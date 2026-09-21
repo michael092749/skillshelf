@@ -1,8 +1,8 @@
 # Catalog map
 
-The catalog contains 81 imported runtime skills, three catalog-authored skills
-(the n8n router, the project skill picker, and the Karpathy guidelines), and one
-preserved source variant. Only skills explicitly copied into a project's host discovery
+The catalog contains 81 imported runtime skills, four catalog-authored skills
+(the n8n router, the project skill picker, the Karpathy guidelines, and the
+second-brain ingest workflow), and one preserved source variant. Only skills explicitly copied into a project's host discovery
 directory become discoverable there.
 
 | Domain | Canonical skills | Source/use |
@@ -17,6 +17,7 @@ directory become discoverable there.
 | `media/video/` | 1 | Video shot planning assets and workflow (local-only; excluded from this repository) |
 | `automation/n8n/` | 16 | Fifteen imported n8n skills plus the context-light router |
 | `meta/` | 1 | Interactive picker that installs catalog skills into a project |
+| `second-brain-ingest/` | 1 | Root-level, always installed by the picker; compiles sources into a wiki vault |
 
 `variants/project-a/engineering/thermo-nuclear-code-quality-review` preserves a
 newline-only source divergence. The canonical `library/engineering` copy is the

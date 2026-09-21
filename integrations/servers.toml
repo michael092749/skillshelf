@@ -1,0 +1,80 @@
+# MCP server registry.
+#
+# One neutral definition per server; `scripts/install_mcp.py` renders it for each
+# host, because the two hosts spell the same server differently:
+#
+#   claude -> <project>/.mcp.json             "mcpServers.<name>"
+#   codex  -> <project>/.codex/config.toml    [mcp_servers.<name>]
+#
+# Values name environment variables. They never contain a credential — that is
+# the whole reason the registry is a separate file from the rendered config.
+#
+# Fields:
+#   description   one sentence, shown in `list`
+#   transport     "stdio" (a launched process) or "http" (a URL the host calls)
+#   command/args  stdio only
+#   env           stdio only; static, non-secret values passed to the process
+#   secret_env    names of variables read from the environment at run time
+#   url           http only
+#   secret_headers  http only; header -> template, "Bearer ${VAR}" or "${VAR}"
+#   hosts         restrict to hosts that can express the entry (default: both)
+#   suggested_by  catalog types or skill IDs this server pairs with
+#   recipe        the integrations/ note covering trust, scopes, and verification
+#
+# Machine-specific and personal servers belong in servers.local.toml, which is
+# gitignored. Both files load; local entries override entries of the same name.
+
+version = 1
+
+[servers.n8n]
+description = "n8n node schemas, workflow validation, and instance access for building and auditing workflows."
+transport = "stdio"
+command = "npx"
+args = ["-y", "n8n-mcp@2.84.0"]
+env = { MCP_MODE = "stdio", LOG_LEVEL = "error", DISABLE_CONSOLE_OUTPUT = "true" }
+secret_env = ["N8N_API_URL", "N8N_API_KEY"]
+docs = "https://github.com/czlonkowski/n8n-mcp"
+recipe = "integrations/n8n/README.md"
+suggested_by = ["automation/n8n"]
+
+[servers.exa]
+description = "Exa web search, content extraction, and research over Exa's hosted endpoint."
+transport = "http"
+url = "https://mcp.exa.ai/mcp"
+docs = "https://docs.exa.ai/reference/exa-mcp"
+recipe = "integrations/exa/README.md"
+suggested_by = ["research/exa", "sales-and-marketing/lead-generation"]
+
+[servers.stripe]
+description = "Stripe's hosted MCP endpoint for account, product, and payment inspection."
+transport = "http"
+url = "https://mcp.stripe.com/"
+docs = "https://docs.stripe.com/mcp"
+recipe = "integrations/stripe/README.md"
+
+[servers.webflow]
+description = "Webflow sites, pages, CMS collections, and components over Webflow's hosted endpoint."
+transport = "http"
+url = "https://mcp.webflow.com/mcp"
+docs = "https://developers.webflow.com/data/docs/ai-tools"
+
+[servers.railway]
+description = "Railway projects, services, deployments, and logs over Railway's hosted endpoint."
+transport = "http"
+url = "https://mcp.railway.com"
+docs = "https://docs.railway.com/guides/mcp"
+
+[servers.chrome-devtools]
+description = "Drive a headless Chrome for page inspection, tracing, and browser-side debugging."
+transport = "stdio"
+command = "npx"
+args = [
+  "-y",
+  "chrome-devtools-mcp@latest",
+  "--headless",
+  "--isolated",
+  "--chrome-arg=--no-sandbox",
+  "--chrome-arg=--disable-setuid-sandbox",
+]
+docs = "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+suggested_by = ["engineering/diagnosing-bugs", "engineering/prototype"]

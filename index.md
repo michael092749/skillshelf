@@ -10,6 +10,8 @@ the deterministic workflow is in [`SETUP.md`](SETUP.md), and the CLI's
 rtk python scripts/install_skills.py list types
 rtk python scripts/install_skills.py list skills --type engineering --brief
 rtk python scripts/install_skills.py install --project /path/to/project --host both --skill engineering/tdd --dry-run
+rtk python scripts/install_mcp.py list --for-type automation/n8n
+rtk python scripts/install_mcp.py install --project /path/to/project --host both --server exa --dry-run
 ```
 
 Use `--host codex` for `<project>/.agents/skills/`, `--host claude` for
@@ -95,8 +97,14 @@ Offer design, idea validation, lead generation, and SEO auditing.
 
 `hormozi-offer`, `idea-validator`, `lead-generation`, `seo-audit`
 
+### `second-brain-ingest` (1)
+
+Always installed by the project picker, and deliberately its own type so no
+category sweep can pull it in by accident:
+`second-brain-ingest`
+
 Run `list skills --type <type>` for exact IDs and current frontmatter
-descriptions, adding `--brief` for one-line summaries. There are 84 selectable canonical skills across 10 types.
+descriptions, adding `--brief` for one-line summaries. There are 85 selectable canonical skills across 11 types.
 
 ## Repository map
 
@@ -105,9 +113,13 @@ descriptions, adding `--brief` for one-line summaries. There are 84 selectable c
 - `variants/` — preserved alternate implementations; opt in deliberately.
 - `bundles/` — small project-profile manifests containing explicit skill
   selections.
-- `integrations/` — separate MCP, plugin, and credential setup recipes.
+- `integrations/` — `servers.toml`, the host-neutral MCP server registry
+  (with a gitignored `servers.local.toml` overlay for personal entries), plus
+  per-service trust, scope, and verification notes.
 - `scripts/install_skills.py` — validated listing, selection, dry-run, and
   whole-directory copying.
+- `scripts/install_mcp.py` — MCP server listing and merges into a project's
+  `.mcp.json` and `.codex/config.toml`.
 - `scripts/audit_catalog.py` — catalog integrity and context-footprint checks.
 - `CATALOG.md` and `SOURCES.toml` — catalog summary and imported provenance.
 - `reports/`, `templates/`, and `tests/` — measurements, setup templates, and

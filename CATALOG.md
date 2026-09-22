@@ -14,7 +14,7 @@ directory become discoverable there.
 | `research/knowledge/` | 1 | Knowledge graph visualization |
 | `sales-and-marketing/` | 4 | Offers, lead generation, idea validation, and SEO auditing |
 | `content/writing/` | 3 | Fragments, beats, and shape workflows |
-| `media/video/` | 1 | Video shot planning assets and workflow (local-only; excluded from this repository) |
+| `media/video/` | 1 | Video shot planning assets and workflow, vendored in full from upstream `video-shotcraft` (Apache-2.0, pinned revision) |
 | `automation/n8n/` | 16 | Fifteen imported n8n skills plus the context-light router |
 | `meta/` | 1 | Interactive picker that installs catalog skills into a project |
 | `second-brain-ingest/` | 1 | Root-level, always installed by the picker; compiles sources into a wiki vault |

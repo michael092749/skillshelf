@@ -26,7 +26,8 @@ that sells the idea.
 - [x] README rewritten as a product pitch (hook → problem → aims → install → use).
 - [x] Scrubbed a private project name → `project-a` and `/home/dev/` → `~/` across
       `SOURCES.toml`, `MIGRATE.md`, `AGENTS.md`, `CATALOG.md`, `reports/`, `tests/`.
-- [x] `library/media/` excluded from the repo; index marked `local-only`.
+- [x] `library/media/video/video-shotcraft` vendored in full from upstream (Apache-2.0,
+      pinned revision `5e71af3`), including audio assets; provenance in `SOURCES.toml`.
 - [x] History squashed to one commit, pushed.
 
 ## Not Yet Done
@@ -41,8 +42,8 @@ that sells the idea.
         --add-topic ai-agents --add-topic developer-tools --add-topic context-engineering
       ```
 - [ ] **No root LICENSE** over 82 skills imported from other people's repos/plugins.
-      Only `karpathy-guidelines` (MIT frontmatter) and the excluded `video-shotcraft`
-      (bundled LICENSE) declare terms. User has been told twice; it is their call.
+      Only `karpathy-guidelines` (MIT frontmatter) and the vendored `video-shotcraft`
+      (bundled Apache-2.0 LICENSE) declare terms. User has been told twice; it is their call.
 - [ ] `/home/dev/test` was never set up. The picker questions were asked and cancelled.
 
 ## Failed Approaches (Don't Repeat These)
@@ -65,10 +66,9 @@ that sells the idea.
   `SOURCES.toml`).
   Fixed with `git checkout --orphan` + `git branch -M`, verified the tree hash was
   unchanged before pushing.
-- **Do NOT just gitignore `library/media/` and stop.** That leaves `index.md`
-  documenting a type a fresh clone doesn't have → `tests/test_install_skills.py`
-  fails on a cloner's very first run, which the README tells them to do. Solved with
-  a `(1, local-only)` marker the test tolerates (see Code Context).
+- **Do NOT gitignore `library/media/` to keep the repo small.** An earlier attempt left
+  `index.md` documenting a type a fresh clone lacked and needed a special index marker.
+  The tree is now vendored in full at a pinned upstream revision instead.
 
 ## Key Decisions
 
@@ -80,16 +80,15 @@ that sells the idea.
 | `--brief` instead of printing full descriptions | Descriptions are trigger-keyword paragraphs (seo-audit's is ~700 chars) and bury the choice |
 | `karpathy-guidelines` in `engineering/`, not its own category | It's about writing code; a category of one costs a type in every listing |
 | Private project name → `project-a`, not deletion | Preserves provenance traceability in `SOURCES.toml` without shipping a private name |
-| `python3` (not `rtk python`) inside SKILL.md and README | The skill runs in other projects and the README is public; `rtk` is a local-only proxy |
+| `python3` (not `rtk python`) inside SKILL.md and README | The skill runs in other projects and the README is public; `rtk` is a machine-local proxy |
 | Squash history rather than force-push later | Nothing had been pushed, so rewriting was free and total |
 
 ## Current State
 
 **Working**: Everything. `audit_catalog.py catalog` clean; 15/15 tests pass.
 
-- Local checkout: **84 skills / 10 types** (includes local-only `media/video`).
-- Fresh clone: **83 skills / 9 types**. Verified by rsync-ing the tree without
-  `library/media/` into a scratch dir and running the full suite there — both green.
+- Local checkout and fresh clone are identical: **85 skills / 11 types**, including
+  the vendored `media/video/video-shotcraft` (~54 MB / 970 tracked files).
 
 **Broken**: Nothing.
 
@@ -103,10 +102,10 @@ This `HANDOFF.md` is untracked — decide whether to commit or gitignore it.
 | `library/meta/setup-project-skills/SKILL.md` | The deliverable. Question-first wrapper around the CLI |
 | `scripts/install_skills.py` | `list types` / `list skills [--type] [--search] [--brief]` / `install` |
 | `scripts/audit_catalog.py` | Structure + duplicate-name validation; `catalog_skills()` maps ID → Skill |
-| `tests/test_install_skills.py` | Index-drift test (line ~38) and the `local-only` tolerance |
+| `tests/test_install_skills.py` | Index-drift test (line ~38) |
 | `index.md` | Human map. **Must** stay in sync or tests fail |
 | `SOURCES.toml` | Import provenance; already scrubbed |
-| `.gitignore` | Excludes `library/media/` with a comment explaining why |
+| `.gitignore` | Credentials and the personal MCP overlay only; nothing under `library/` is ignored |
 
 ## Code Context
 
@@ -150,21 +149,8 @@ def brief(description: str, limit: int = 110) -> str:
     ...
 ```
 
-**The `local-only` index marker.** `index.md` header and the test that tolerates it:
-
-```markdown
-### `media/video` (1, local-only)
-```
-
-```python
-# tests/test_install_skills.py
-section_pattern = re.compile(
-    r"^### `([^`]+)` \((\d+)(, local-only)?\)\n\n(.*?)(?=^### |^Run `list)",
-    re.MULTILINE | re.DOTALL,
-)
-local_only = {name for name, (_, _, is_local) in indexed.items() if is_local}
-self.assertEqual(set(indexed) - local_only, set(expected_counts) - local_only)
-```
+**Index header format.** Each type header is `### `media/video` (1)`; the index test
+parses the type and count from that header and compares against `list types`.
 
 ## Resume Instructions
 
@@ -174,7 +160,7 @@ self.assertEqual(set(indexed) - local_only, set(expected_counts) - local_only)
    python3 scripts/audit_catalog.py catalog
    python3 -m unittest discover -s tests -v
    ```
-   - Expected: `canonical_skills=84 variants=1 bundles=10`, then `OK` (15 tests).
+   - Expected: `canonical_skills=85 variants=1 bundles=10`, then `OK` (30 tests).
    - If a duplicate-name error appears: an untracked skill dir was added under
      `library/`. Find it with the Python `rglob` one-liner in Failed Approaches.
 
@@ -207,12 +193,12 @@ self.assertEqual(set(indexed) - local_only, set(expected_counts) - local_only)
 
 - **The repo is PUBLIC.** Anything committed is indexed and cached. Re-scrub before
   committing provenance, reports, or migration notes that reference real projects.
-- **`library/media/` exists on disk but is gitignored.** It is 51 MB / 855 files.
-  Do not "fix" the index by deleting the `local-only` marker — read Failed Approaches.
+- **`library/media/` is tracked (~54 MB / 970 files).** Re-sync it only from the pinned
+  upstream revision recorded in `SOURCES.toml`, never from an unpinned checkout.
 - **`AGENTS.md` mandates prefixing shell commands with `rtk`** inside this repo. That
   rule does **not** apply to the contents of SKILL.md files or the README, which run
   or are read elsewhere. Keep those on plain `python3`.
-- **Do not re-add `video-shotcraft` to git** without checking its bundled LICENSE —
-  23 MB of it is licensed background-music mp3s.
+- **`video-shotcraft` audio assets** (bgm/sfx mp3s) are not Apache-2.0; each follows its own
+  terms in `assets/audio/ATTRIBUTION.md`, and some sfx rows are marked untraceable.
 - The user's own examples use `~/skills`. Keep that as the documented catalog path;
   the CLI also honours `${SKILLS_CATALOG}`.

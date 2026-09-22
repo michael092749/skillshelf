@@ -9,10 +9,6 @@ __pycache__/
 !**/.env.example
 !**/.env.*.example
 
-# Locally vendored, not redistributed: 51 MB of bundled media (incl. licensed
-# audio) from an upstream plugin repo. Present locally, excluded from this repo.
-library/media/
-
 # Personal MCP servers: machine paths, private hostnames, and per-account
 # endpoints. The public registry is integrations/servers.toml.
 integrations/servers.local.toml

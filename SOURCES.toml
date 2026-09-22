@@ -1,8 +1,9 @@
 version = 1
 imported_at = "2026-09-12T15:40:45Z"
+updated_at = "2026-09-22T00:00:00Z"
 
 [policy]
-canonical_precedence = ["codex-personal", "claude-personal", "project-a-project"]
+canonical_precedence = ["codex-personal", "claude-personal", "project-a-project", "video-shotcraft-upstream"]
 dedupe = "Collapse byte-identical directories; preserve divergent same-name sources under variants/."
 defaults = "Built-in, system, and bundled vendor skills are excluded."
 
@@ -60,6 +61,16 @@ source = "~/project-a/.agents/skills/seo-audit"
 destination = "library/sales-and-marketing/seo-audit"
 selection = "canonical source; Claude project entry is a symlink alias"
 
+[[imports]]
+source_id = "video-shotcraft-upstream"
+source = "https://github.com/Vincentwei1021/video-shotcraft"
+revision = "5e71af35a2daee492dd3ea93e5e8903f32dcd13c"
+destination = "library/media/video/video-shotcraft"
+selection = "complete upstream tree at the pinned revision, including assets; upstream .git metadata omitted"
+license = "Apache-2.0"
+license_file = "library/media/video/video-shotcraft/LICENSE"
+notes = "The upstream LICENSE is preserved verbatim. Audio assets under assets/audio/ (bgm and sfx mp3s) are not covered by Apache-2.0; each is governed by its own attribution/license terms as recorded in assets/audio/ATTRIBUTION.md (Mixkit free licenses; several sfx rows are marked untraceable and need confirmation before commercial use)."
+
 [[variants]]
 runtime_name = "thermo-nuclear-code-quality-review"
 source = "~/project-a/.claude/skills/thermo-nuclear-code-quality-review"
@@ -70,6 +81,6 @@ reason = "Differs from canonical source by a trailing newline; preserved rather 
 paths = [
   "~/.codex/skills/.system",
   "~/.codex/plugins/cache",
-  "~/skills/library/media/video/video-shotcraft/.git",
+  "https://github.com/Vincentwei1021/video-shotcraft (.git metadata; the working tree is vendored, the repository history is not)",
 ]
 reason = "Vendor defaults, plugin caches, and nested VCS metadata are not catalog skill content."

@@ -61,13 +61,13 @@ Calendar, Docs, Drive, Gmail, Sheets, and cross-app workflows.
 `gws-gmail-reply-all`, `gws-gmail-send`, `gws-gmail-triage`, `gws-gmail-watch`,
 `gws-sheets`, `gws-sheets-read`, `gws-workflow-email-to-task`
 
-### `media/video` (1, local-only)
+### `media/video` (1)
 
 Cinematic product-video planning and production with Remotion:
 `video-shotcraft`
 
-Not redistributed in this repository (51 MB of bundled media from an upstream
-plugin). A fresh clone has 83 skills across 9 types and will not list this one.
+Vendored in full from the upstream Apache-2.0 repository at a pinned revision,
+including its audio assets (their terms are listed in `assets/audio/ATTRIBUTION.md`).
 
 ### `meta` (1)
 

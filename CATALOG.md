@@ -1,6 +1,6 @@
 # Catalog map
 
-The catalog contains 81 imported runtime skills, four catalog-authored skills
+The catalog contains 82 imported runtime skills, four catalog-authored skills
 (the n8n router, the project skill picker, the Karpathy guidelines, and the
 second-brain ingest workflow), and one preserved source variant. Only skills explicitly copied into a project's host discovery
 directory become discoverable there.
@@ -13,6 +13,7 @@ directory become discoverable there.
 | `research/exa/` | 4 | Exa search, contents, API building, and company research |
 | `research/knowledge/` | 1 | Knowledge graph visualization |
 | `sales-and-marketing/` | 4 | Offers, lead generation, idea validation, and SEO auditing |
+| `content/carousels/` | 1 | Portable ebook carousel research, generation, review and export workflow |
 | `content/writing/` | 3 | Fragments, beats, and shape workflows |
 | `media/video/` | 1 | Video shot planning assets and workflow, vendored in full from upstream `video-shotcraft` (Apache-2.0, pinned revision) |
 | `automation/n8n/` | 16 | Fifteen imported n8n skills plus the context-light router |

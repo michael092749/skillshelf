@@ -83,6 +83,15 @@ class CatalogTests(unittest.TestCase):
             issues, _ = audit.catalog_issues(root)
             self.assertTrue(any("duplicate canonical runtime name demo" in item for item in issues))
 
+    def test_tree_hash_ignores_python_runtime_caches(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            (root / "SKILL.md").write_text("stable skill")
+            before = audit.tree_hash(root)
+            (root / "__pycache__").mkdir()
+            (root / "__pycache__/helper.cpython-311.pyc").write_bytes(b"runtime")
+            self.assertEqual(before, audit.tree_hash(root))
+
     def test_tree_hash_tracks_content_not_mtime(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             directory = Path(tmp) / "skill"
@@ -134,7 +143,7 @@ class ProjectTests(unittest.TestCase):
     def test_actual_coding_and_n8n_bundle_is_project_scoped(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            subprocess.run(["rtk", "git", "init", "-q"], cwd=root, check=True)
+            subprocess.run(["git", "init", "-q"], cwd=root, check=True)
             selected = audit.resolve_bundles(["coding", "n8n"], audit.CATALOG)
             bundle = audit.load_bundle(audit.CATALOG / "bundles" / "n8n.toml")
             catalog = audit.catalog_skills(audit.CATALOG)

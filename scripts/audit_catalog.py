@@ -121,7 +121,8 @@ def tree_hash(directory: Path) -> str:
     digest = hashlib.sha256()
     entries = sorted(
         p for p in directory.rglob("*")
-        if ".git" not in p.relative_to(directory).parts
+        if not {".git", "__pycache__", ".pytest_cache"}.intersection(p.relative_to(directory).parts)
+        and p.suffix not in {".pyc", ".pyo"}
     )
     for path in entries:
         relative = path.relative_to(directory).as_posix().encode()

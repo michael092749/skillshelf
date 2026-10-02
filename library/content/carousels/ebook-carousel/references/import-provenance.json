@@ -1,0 +1,22 @@
+{
+  "source": "marketing-startegy/skills/ebook-carousel",
+  "observed_at": "2026-10-02",
+  "adaptation": "Portable catalog edition; source file hashes identify imported revision. No production assets or account snapshots included.",
+  "source_files": {
+    "SKILL.md": "7ae8cdddcf9a169c708d6e9fe84d3ab5050d425256fd37e694a2d7c03c73bddf",
+    "agents/openai.yaml": "4ae1c87ab254673f2de33b9ef27dbfafb0a44e25e7979a1b8aba6617d33158a7",
+    "references/artifacts.md": "3136da8f15b62a16b295db599b95da7f40cc795967574a931ffa390b51fa3da4",
+    "references/orchestration.md": "2efa4caca1cd444ce82882feb4d63eb48ce63f73554a59b0c17297968f774a8e",
+    "references/performance.md": "5f0dba51d55e86e60682c71ee2016ee3b0c1cbcf307ba8a429c1b40f8877f3a9",
+    "references/research.md": "1ad5eb4123041e9f62a75982e507826a67813397d4e94f88962e040ee3c52da6",
+    "references/review.md": "df4b23705f1c61b02e62e8c70d647694753925d872969911c646d9ffeaa7dbb7",
+    "references/skill-map.md": "9b78163189167c3b77dbad71801c6f304363243311e9e74cb12805af813ffe6a",
+    "references/visuals.md": "a6a5e03c7f89c150245ad7f6ace3fa08a0eeb3bac64a93564d68382348f04c67",
+    "references/workflow.md": "932fd9315c93c1e962edb319c8be8d76ec0c556213cf062abc5f75f40d979cb7",
+    "references/writing.md": "dbfa9942b7f8cd62955192068e448f03f0e4a58dc33b567b0a223bbbe4d5c026",
+    "scripts/normalize_slides.py": "2955c979b12056845f80d28838ac38b371248d2560bf4bdf335e7637f67bfa79",
+    "scripts/test_normalize_slides.py": "b05883c1dd33df7aee345e451c392f6900fccf1685cfe13bd5c5e7230f7e8a9a",
+    "scripts/test_validate_carousel.py": "64ce3efbef5e6e6e7adc9f87a45ba38957febf6fcf66cf1482fc9d20ff2cd0b7",
+    "scripts/validate_carousel.py": "935e361bd10a51578f46b7af076978c7670b8d417cfa7cb6b55a3492bd010feb"
+  }
+}

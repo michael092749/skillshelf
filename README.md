@@ -138,7 +138,7 @@ because neither Codex nor Claude looks there. Cloning it inside a project
 defeats the point.
 
 ```bash
-git clone https://github.com/<you>/skills.git ~/skills
+git clone https://github.com/michael092749/skillshelf.git ~/skills
 ```
 
 **2. Install the one skill that does everything else.**
@@ -169,6 +169,30 @@ identical is left alone.
 
 Adding a skill to the catalog makes it appear in that menu automatically. There
 is nothing to register.
+
+### Ebook carousel workflow
+
+Clone this repository with `git clone https://github.com/michael092749/skillshelf.git ~/skills`.
+Install the complete portable carousel skill into a project:
+
+```bash
+python3.11 ~/skills/scripts/install_skills.py install \
+  --project /path/to/project --host codex --skill content/carousels/ebook-carousel
+```
+
+Use `--host both` for both discovery directories. Then ask:
+“Use ebook-carousel with my publisher URL, audience and brand brief.”
+
+It researches one fresh idea, generates up to six slides using parallel workers
+when available, reviews every final image, normalizes 1080 × 1350 exports and writes
+Instagram/TikTok captions. Low views skip detailed analytics, never image review.
+It stops before publishing. The [flowchart](library/content/carousels/ebook-carousel/references/workflow.md)
+shows the stages and repair paths.
+
+Read [first-run setup](library/content/carousels/ebook-carousel/references/setup.md)
+for required Exa/image tools and Python/Pillow. Installing instructions does not
+provision those services. Brand assets, analytics and wiki access are supplied by
+the user; no private workspace or fixed social accounts are required.
 
 ### Driving it directly
 

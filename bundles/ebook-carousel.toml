@@ -1,0 +1,7 @@
+version = 1
+id = "ebook-carousel"
+description = "Researched ebook slideshows with parallel generation, visual review and platform captions."
+detection = ["ebook carousel", "photo slideshow", "ebook social content"]
+skills = ["content/carousels/ebook-carousel"]
+reference_skills = []
+integrations = ["exa"]

@@ -111,6 +111,25 @@ class InstallTests(unittest.TestCase):
             self.assertEqual(second.returncode, 0, second.stderr)
             self.assertIn("installed skills=1 hosts=1 copies=0 unchanged=1", second.stdout)
 
+    def test_ebook_carousel_copies_complete_portable_bundle(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            project = Path(raw)
+            result = run_cli("install", "--project", str(project), "--host", "both",
+                             "--skill", "content/carousels/ebook-carousel")
+            self.assertEqual(result.returncode, 0, result.stderr)
+            for host in (".agents", ".claude"):
+                skill = project / host / "skills/ebook-carousel"
+                for relative in ("SKILL.md", "agents/openai.yaml", "requirements.txt",
+                                 "references/setup.md", "references/workflow.md",
+                                 "scripts/normalize_slides.py", "scripts/validate_carousel.py"):
+                    self.assertTrue((skill / relative).is_file(), relative)
+                self.assertFalse(list(skill.rglob("*.pyc")))
+                self.assertNotIn("/home/startup", (skill / "SKILL.md").read_text())
+            again = run_cli("install", "--project", str(project), "--host", "both",
+                            "--skill", "content/carousels/ebook-carousel")
+            self.assertEqual(again.returncode, 0, again.stderr)
+            self.assertIn("copies=0 unchanged=2", again.stdout)
+
     def test_type_can_copy_to_both_hosts(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             project = Path(raw)

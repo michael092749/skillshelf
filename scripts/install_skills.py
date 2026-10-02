@@ -107,7 +107,8 @@ def copy_skill(source: Path, destination: Path) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".skill-copy-", dir=destination.parent) as raw:
         staged = Path(raw) / destination.name
-        shutil.copytree(source, staged, symlinks=True)
+        shutil.copytree(source, staged, symlinks=True,
+                        ignore=shutil.ignore_patterns(".git", "__pycache__", ".pytest_cache", "*.pyc", "*.pyo"))
         if audit.tree_hash(source) != audit.tree_hash(staged):
             raise OSError(f"staged copy hash mismatch: {destination}")
         staged.rename(destination)

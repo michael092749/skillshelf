@@ -31,6 +31,15 @@ self-hosting.
 `n8n-project-router`, `n8n-self-hosting`, `n8n-subworkflows`,
 `n8n-validation-expert`, `n8n-workflow-patterns`, `using-n8n-mcp-skills`
 
+### `content/carousels` (1)
+
+Research, parallel image generation, visual review, slideshow exports and captions:
+`ebook-carousel`
+
+Portable publisher/brand inputs; requires Exa MCP and an image-capable host.
+See [first-run setup](library/content/carousels/ebook-carousel/references/setup.md)
+and the [workflow flowchart](library/content/carousels/ebook-carousel/references/workflow.md).
+
 ### `content/writing` (3)
 
 Writing fragments, beats, and article shape.
@@ -104,7 +113,7 @@ category sweep can pull it in by accident:
 `second-brain-ingest`
 
 Run `list skills --type <type>` for exact IDs and current frontmatter
-descriptions, adding `--brief` for one-line summaries. There are 85 selectable canonical skills across 11 types.
+descriptions, adding `--brief` for one-line summaries. There are 86 selectable canonical skills across 12 types.
 
 ## Repository map
 

@@ -10,7 +10,7 @@ import zlib
 from validate_carousel import validate
 
 
-def png(color, width=1080, height=1350):
+def png(color, width=1080, height=1920):
     def chunk(kind, payload):
         return (struct.pack('>I', len(payload)) + kind + payload +
                 struct.pack('>I', zlib.crc32(kind + payload) & 0xffffffff))
@@ -60,6 +60,8 @@ class ValidatorTests(unittest.TestCase):
         (self.root / 'exports').mkdir()
         self.add_slide((238, 233, 224))
         self.add_slide((52, 66, 54))
+        for color in [(100, 110, 120), (130, 140, 150), (160, 170, 180)]:
+            self.add_slide(color)
         self.save()
 
     def add_slide(self, color):
@@ -96,6 +98,11 @@ class ValidatorTests(unittest.TestCase):
         self.save()
         self.assertTrue(any('limitation reason' in e for e in validate(self.root)))
 
+    def test_four_slides_rejected(self):
+        self.manifest['slides'].pop()
+        self.save()
+        self.assertTrue(any('5–6 slides' in e for e in validate(self.root)))
+
     def test_malformed_performance_rows(self):
         report = self.performance['platforms']['instagram']
         report.update(status='ok', metrics=[{'fieldId': 'example', 'metricName': 'views'}])
@@ -122,9 +129,9 @@ class ValidatorTests(unittest.TestCase):
         self.assertTrue(any('Empty caption' in e for e in validate(self.root)))
 
     def test_seven_slides(self):
-        for i in range(5): self.add_slide((i, i, i))
+        for i in range(2): self.add_slide((i, i, i))
         self.save()
-        self.assertTrue(any('2–6' in e for e in validate(self.root)))
+        self.assertTrue(any('5–6' in e for e in validate(self.root)))
 
     def test_duplicate_images(self):
         self.add_slide((238, 233, 224))

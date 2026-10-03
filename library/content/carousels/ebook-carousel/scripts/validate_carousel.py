@@ -160,13 +160,13 @@ def validate(root):
     for field in ['all_images_inspected', 'copy_verified', 'claims_verified', 'funnel_verified',
                   'reference_consistency', 'visual_variety', 'mobile_readability']:
         require(manifest.get('review', {}).get(field) is True, 'Review not completed: ' + field)
-    profile = manifest.get('export_profile', {'width': 1080, 'height': 1350})
+    profile = manifest.get('export_profile', {'width': 1080, 'height': 1920})
     target = (profile.get('width'), profile.get('height'))
     require(all(isinstance(n, int) for n in target) and
-            target[0] >= 1080 and target[1] >= 1350 and target[0] * 5 == target[1] * 4,
-            'Invalid 4:5 export profile')
+            target[0] >= 1080 and target[1] >= 1920 and target[0] * 16 == target[1] * 9,
+            'Invalid 9:16 export profile')
     slides = manifest.get('slides', [])
-    require(2 <= len(slides) <= 6, 'Carousel requires 2–6 slides')
+    require(5 <= len(slides) <= 6, 'Carousel requires 5–6 slides')
     hashes, dimensions, slide_paths = [], [], set()
     for number, slide in enumerate(slides, 1):
         relative = slide.get('path', '')

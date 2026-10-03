@@ -1,4 +1,4 @@
 interface:
   display_name: "Ebook Carousel"
   short_description: "Research, create, and review ebook carousel slides"
-  default_prompt: "Use $ebook-carousel to use my publisher, audience, and brand brief to select a fresh topic and create up to six researched, visually reviewed 1080x1350 slideshow images with platform captions, without publishing."
+  default_prompt: "Use $ebook-carousel to use my publisher, audience, and brand brief to select a fresh topic and create five or six researched, visually reviewed 1080x1920 slideshow images with platform captions, without publishing."

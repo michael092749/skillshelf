@@ -16,43 +16,43 @@ class NormalizeTests(unittest.TestCase):
         self.source.mkdir()
         self.output = self.root / "export"
 
-    def slide(self, name="01-hook.png", size=(1122, 1402), color="white"):
+    def slide(self, name="01-hook.png", size=(1122, 1995), color="white"):
         path = self.source / name
         Image.new("RGB", size, color).save(path)
         return path
 
-    def test_1122_by_1402_preserves_edges_and_original(self):
+    def test_1122_by_1995_preserves_edges_and_original(self):
         path = self.slide()
         with Image.open(path) as image:
             draw = ImageDraw.Draw(image)
-            draw.rectangle((0, 0, 30, 1401), fill="red")
-            draw.rectangle((1091, 0, 1121, 1401), fill="blue")
+            draw.rectangle((0, 0, 30, 1994), fill="red")
+            draw.rectangle((1091, 0, 1121, 1994), fill="blue")
             draw.rectangle((40, 0, 1080, 30), fill="green")
-            draw.rectangle((40, 1371, 1080, 1401), fill="yellow")
+            draw.rectangle((40, 1964, 1080, 1994), fill="yellow")
             image.save(path)
         original = sha256(path)
         report = normalize(self.source, self.output)
         self.assertEqual(original, sha256(path))
         with Image.open(self.output / path.name) as result:
-            self.assertEqual(result.size, (1080, 1350))
+            self.assertEqual(result.size, (1080, 1920))
             self.assertEqual(result.mode, "RGB")
             self.assertEqual(result.getpixel((3, 600)), (255, 0, 0))
             self.assertEqual(result.getpixel((1076, 600)), (0, 0, 255))
             self.assertEqual(result.getpixel((600, 3)), (0, 128, 0))
-            self.assertEqual(result.getpixel((600, 1346)), (255, 255, 0))
+            self.assertEqual(result.getpixel((600, 1916)), (255, 255, 0))
         self.assertEqual(report["slides"][0]["source_sha256"], original)
         other = self.root / "second-export"
         second = normalize(self.source, other)
         self.assertEqual(report["slides"][0]["output_sha256"], second["slides"][0]["output_sha256"])
 
     def test_wide_image_rejected_without_outputs(self):
-        self.slide(size=(1920, 1350))
+        self.slide(size=(1920, 1920))
         with self.assertRaisesRegex(ValueError, "repair the design"):
             normalize(self.source, self.output)
         self.assertFalse(self.output.exists())
 
     def test_no_upscaling(self):
-        self.slide(size=(800, 1000))
+        self.slide(size=(720, 1280))
         with self.assertRaisesRegex(ValueError, "no upscaling"):
             normalize(self.source, self.output)
 
@@ -82,8 +82,8 @@ class NormalizeTests(unittest.TestCase):
         self.assertEqual(before, sha256(path))
 
     def test_transparency_flattened_and_numeric_order(self):
-        self.slide("10-end.png", (1080, 1350), "red")
-        Image.new("RGBA", (1080, 1350), (0, 0, 0, 0)).save(self.source / "2-hook.png")
+        self.slide("10-end.png", (1080, 1920), "red")
+        Image.new("RGBA", (1080, 1920), (0, 0, 0, 0)).save(self.source / "2-hook.png")
         report = normalize(self.source, self.output)
         self.assertTrue(report["slides"][0]["source"].endswith("2-hook.png"))
         with Image.open(self.output / "2-hook.png") as image:
@@ -96,19 +96,19 @@ class NormalizeTests(unittest.TestCase):
         result_path = self.output / "01-hook.jpg"
         with Image.open(result_path) as image:
             self.assertEqual(image.format, "JPEG")
-            self.assertEqual(image.size, (1080, 1350))
+            self.assertEqual(image.size, (1080, 1920))
             self.assertEqual(image.mode, "RGB")
         self.assertEqual(report["slides"][0]["output_bytes"], result_path.stat().st_size)
         self.assertEqual(original, sha256(source))
 
     def test_exif_orientation_before_dimension_check(self):
         path = self.source / "01-hook.png"
-        image = Image.new("RGB", (1350, 1080), "red")
+        image = Image.new("RGB", (1920, 1080), "red")
         exif = image.getexif()
         exif[274] = 6
         image.save(path, exif=exif)
         report = normalize(self.source, self.output)
-        self.assertEqual(report["slides"][0]["oriented_dimensions"], [1080, 1350])
+        self.assertEqual(report["slides"][0]["oriented_dimensions"], [1080, 1920])
 
 
 if __name__ == "__main__":

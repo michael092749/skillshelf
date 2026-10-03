@@ -31,7 +31,7 @@ flowchart TD
 
     WorkerA --> Export
     WorkerB --> Export
-    Export[Parent: preserve originals; normalize selected slides to 1080 x 1350; JPEG set for TikTok API] --> Review
+    Export[Parent: preserve originals; normalize selected slides to 1080 x 1920; JPEG set for TikTok API] --> Review
     Review[Reviewer: inspect each final image at full size and phone scale] --> Merge
     Captions --> Merge
     Merge[Parent: review complete sequence, captions, claims and destination] --> Valid[Run artifact validator]

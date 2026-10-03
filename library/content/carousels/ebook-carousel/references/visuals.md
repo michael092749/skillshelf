@@ -46,7 +46,7 @@ coherent specification, rather than a generic style paragraph reused six times:
    slogans or “helpful” medical statements generated inside the image.
 7. Diagram/chart source values and labels when present; distinguish conceptual
    visuals from quantitative claims.
-8. Canvas: portrait 4:5, with final exports at 1080 × 1350, matching every slide.
+8. Canvas: portrait 9:16, with final exports at 1080 × 1920, matching every slide.
    A larger generation canvas is fine; request the composition ratio in the prompt.
    Tool parameters must follow the live tool schema; do not invent size arguments.
 9. Acceptance criteria: legible on a phone, complete copy, correct reading order,
@@ -59,7 +59,7 @@ recent-image references, include the smallest set covering the intended inputs.
 
 ## Slideshow canvas and publishing route
 
-Default: one consistent **1080 × 1350 portrait 4:5** set for Instagram and TikTok
+Default: one consistent **1080 × 1920 portrait 9:16** set for Instagram and TikTok
 photo slideshows. This is the project's shared design target, not a claim about a
 platform's maximum ratio. Keep important text about 6% inside the canvas, with
 extra room near the bottom; confirm actual UI overlays in a publisher preview
@@ -68,12 +68,8 @@ shrinking text. PNG masters use RGB; every slide has the same dimensions. The he
 mode, not ICC color profiles; use sRGB sources or verify color management when
 a source has another embedded profile.
 
-When the user requests a separate full-screen TikTok set, design it at
-**1080 × 1920 (9:16)** with its own text placement and safe-area review. Do not
-stretch or crop the 4:5 slide to fill it. Declare the additional asset count before
-allocating generation jobs; this is a separate layout, not the default workflow.
-Keep such variants in a separate platform folder and adapt the artifact profile
-and validator before calling that variant set ready.
+Use the shared 9:16 masters for both platforms. Keep delivery-format derivatives
+in separate platform folders and review their actual files.
 
 Publishing format depends on the actual route. The [TikTok photo API media guide](https://developers.tiktok.com/docs/en/content-posting-api-media-transfer-guide)
 was checked 2026-10-02: it lists JPEG/WebP and a 20 MB per-image limit. Therefore
@@ -81,7 +77,7 @@ PNG masters alone are not API-upload-ready. If that route is intended, make a
 separate JPEG set, inspect it and record file sizes. Native-app acceptance can
 differ; inspect its current requirements rather than assuming the API's limits.
 For Instagram, [photo-resolution help](https://help.instagram.com/1631821640426723)
-was rate-limited during this skill review; 4:5 remains our production choice.
+was rate-limited during this skill review; 9:16 remains our production choice.
 TikTok's [carousel ad playbook](https://ads.tiktok.com/business/library/Image_Ads_Carousel_Ads_Playbook.pdf) favors
 9:16 and safe zones for ads; it is not an organic-photo requirement.
 
@@ -98,7 +94,7 @@ new RGB PNG files in exports/. Proportional fitting plus minimal ivory padding
 preserves content; no stretching, content cropping or upscaling. The default
 helper rejects ratio mismatches greater than 1% and undersized originals so a
 wrong composition goes back to design rather than being disguised by padding.
-A 1122 × 1402 generation is a routine normalization case, not a creative failure.
+A 1122 × 1995 generation is a routine normalization case, not a creative failure.
 Record source/output dimensions, hashes and transform in run.json or a linked
 export report. Reinspect the final file after normalization.
 

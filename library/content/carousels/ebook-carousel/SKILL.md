@@ -1,9 +1,14 @@
 ---
 name: ebook-carousel
-description: Research and produce a ebook image carousel with up to six slides and Instagram/TikTok captions. Use for a new carousel or revision, including evidence, writing, image generation, visual review, and slideshow export preparation.
+description: Research and produce a ebook image carousel with five or six slides and Instagram/TikTok captions. Use for a new carousel or revision, including evidence, writing, image generation, visual review, and slideshow export preparation.
 ---
 
 # Ebook Carousel
+
+When the workspace has its own `skills/ebook-carousel/SKILL.md`, read and follow
+that project entrypoint instead of this portable edition. Its references own the
+project templates, render profiles, learning loop and publishing integrations.
+Keep this catalogue installation separate from that project-owned bundle.
 
 Choose one fresh, researched idea and deliver a ready-to-publish image carousel.
 Use the user-selected publisher and verified public catalogue as product sources.
@@ -15,8 +20,8 @@ Finish files; publication and profile changes are separate tasks.
 
 - Use the configured audience, language and topic priorities. Choose a life stage
   only when supported by the brief and evidence.
-- Normally deliver 4–6 ordered still images, never more than six, plus separate Instagram
-  and TikTok captions. Default shared slideshow export: **1080 × 1350 (4:5)**.
+- Normally deliver 5–6 ordered still images, never more than six, plus separate Instagram
+  and TikTok captions. Default shared slideshow export: **1080 × 1920 (9:16)**.
 - Use the project brand guide and authorized references with varied layouts. The
   included neutral ivory/forest-green palette is an optional starting point.
 - Use live **Exa MCP** for research and built-in **GPT Image** via `imagegen` for

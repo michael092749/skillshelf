@@ -18,5 +18,11 @@
     "scripts/test_normalize_slides.py": "b05883c1dd33df7aee345e451c392f6900fccf1685cfe13bd5c5e7230f7e8a9a",
     "scripts/test_validate_carousel.py": "64ce3efbef5e6e6e7adc9f87a45ba38957febf6fcf66cf1482fc9d20ff2cd0b7",
     "scripts/validate_carousel.py": "935e361bd10a51578f46b7af076978c7670b8d417cfa7cb6b55a3492bd010feb"
-  }
+  },
+  "local_updates": [
+    {
+      "observed_at": "2026-10-03",
+      "changes": "Aligned portable defaults, normalization and validation to five or six 1080x1920 slides; prefer the project-owned entrypoint when available. Original import hashes retained."
+    }
+  ]
 }

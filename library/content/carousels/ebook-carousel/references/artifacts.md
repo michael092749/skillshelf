@@ -56,7 +56,7 @@ parent/child handoffs. All timestamps use ISO 8601 with timezone.
   "format": "carousel",
   "status": "draft",
   "copy_revision": "v1",
-  "export_profile": {"width": 1080, "height": 1350, "format": "png", "mode": "RGB"},
+  "export_profile": {"width": 1080, "height": 1920, "format": "png", "mode": "RGB"},
   "publishing_routes": {"tiktok": "unselected"},
   "topic": "Selected original angle",
   "audience": "Audience and language from the project brief",
@@ -122,7 +122,7 @@ and hash; its shape is defined in [review.md](review.md). Transforming or replac
 an export requires a fresh review. Record copy revision and per-slide assignments
 in run.json before dispatching; only parent merges worker results.
 
-Record the export profile (default 1080 × 1350 RGB PNG), source/output dimensions
+Record the export profile (default 1080 × 1920 RGB PNG), source/output dimensions
 and hashes, normalization report path and any publisher-specific set in run.json.
 Declare `publishing_routes.tiktok` as `api`, `native_app`, or `unselected`.
 `unselected` means the publishing route is a handoff prerequisite, not that PNG
@@ -135,11 +135,10 @@ canonical slide, not proof of equivalent pixels. Inspect each JPEG's copy and
 visuals, and record its own path/hash in the review. Validation requires Pillow
 for declared API JPEG sets, RGB, matching canvas and at most 20 MB per image.
 
-Canonical exports default to exact 1080 × 1350. If the user explicitly requests
-larger 4:5 files, declare width/height in export_profile and validate against that
-profile; the normalization helper itself deliberately targets 1080 × 1350.
-Two or three slides are permitted for an explicit shorter brief; normal runs use
-4–6. A 9:16 variant requires a separate profile/validator adaptation. Keep originals under assets/generated/ and edits under archive/ when
+Canonical exports default to exact 1080 × 1920. If the user explicitly requests
+larger 9:16 files, declare width/height in export_profile and validate against that
+profile; the normalization helper itself deliberately targets 1080 × 1920.
+Deliver five or six slides; the validator enforces that count. Keep originals under assets/generated/ and edits under archive/ when
 superseded. reviews/ contains only current checks; historical reviews go to archive/.
 Research stage completes only after live Exa MCP research and explicit reporting
 of inaccessible sources; images completes only after actual files exist. Keep

@@ -1,6 +1,6 @@
 version = 1
 imported_at = "2026-09-12T15:40:45Z"
-updated_at = "2026-10-02T00:00:00Z"
+updated_at = "2026-10-03T00:00:00Z"
 
 [policy]
 canonical_precedence = ["codex-personal", "claude-personal", "project-a-project", "video-shotcraft-upstream"]
@@ -91,4 +91,4 @@ source = "marketing-startegy/skills/ebook-carousel"
 destination = "library/content/carousels/ebook-carousel"
 selection = "Complete project-authored skill; bytecode caches omitted; portable publisher inputs replace local paths and account defaults"
 revision_manifest = "library/content/carousels/ebook-carousel/references/import-provenance.json"
-notes = "Imported with user authorization for skillshelf redistribution. No production assets, metrics, secrets, or third-party skill source vendored. Optional external references remain links."
+notes = "Imported with user authorization for skillshelf redistribution. No production assets, metrics, secrets, or third-party skill source vendored. Optional external references remain links. Local 2026-10-03 update aligns five-to-six-slide 9:16 defaults and routes project work to its own canonical skill; original import hashes remain in the revision manifest."

@@ -11,7 +11,7 @@ import re
 import sys
 from pathlib import Path
 
-TARGET = (1080, 1350)
+TARGET = (1080, 1920)
 BACKGROUND = (238, 233, 224)
 
 
@@ -68,7 +68,7 @@ def normalize(input_dir, output_dir, output_format="png"):
             if mismatch > 0.01:
                 raise ValueError(f"{path.name}: aspect mismatch exceeds 1%; repair the design in the image tool before export.")
             if width < TARGET[0] or height < TARGET[1]:
-                raise ValueError(f"{path.name}: source is smaller than 1080x1350; regenerate at sufficient resolution (no upscaling).")
+                raise ValueError(f"{path.name}: source is smaller than 1080x1920; regenerate at sufficient resolution (no upscaling).")
             rgba = oriented.convert("RGBA")
             flattened = Image.new("RGBA", rgba.size, BACKGROUND + (255,))
             flattened.alpha_composite(rgba)
@@ -108,7 +108,7 @@ def normalize(input_dir, output_dir, output_format="png"):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Export numbered PNG slides as exact 1080x1350 RGB PNGs. Preserves sources; fits and pads without crop/stretch. Requires Pillow.")
+    parser = argparse.ArgumentParser(description="Export numbered PNG slides as exact 1080x1920 RGB PNGs. Preserves sources; fits and pads without crop/stretch. Requires Pillow.")
     parser.add_argument("input_dir", type=Path, help="Directory containing only the selected numbered PNG slides")
     parser.add_argument("output_dir", type=Path, help="Separate absent/empty directory for images and normalization-report.json")
     parser.add_argument("--format", choices=("png", "jpeg"), default="png", help="png for canonical exports (default); jpeg for a separate publisher-compatible folder")

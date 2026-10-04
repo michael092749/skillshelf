@@ -70,10 +70,13 @@ Calendar, Docs, Drive, Gmail, Sheets, and cross-app workflows.
 `gws-gmail-reply-all`, `gws-gmail-send`, `gws-gmail-triage`, `gws-gmail-watch`,
 `gws-sheets`, `gws-sheets-read`, `gws-workflow-email-to-task`
 
-### `media/video` (1)
+### `media/video` (2)
 
 Cinematic product-video planning and production with Remotion:
 `video-shotcraft`
+
+Video understanding from URLs or local files with Gemini or local frame/transcript
+evidence: `watch` (MIT; complete upstream skill and scripts).
 
 Vendored in full from the upstream Apache-2.0 repository at a pinned revision,
 including its audio assets (their terms are listed in `assets/audio/ATTRIBUTION.md`).
@@ -113,7 +116,7 @@ category sweep can pull it in by accident:
 `second-brain-ingest`
 
 Run `list skills --type <type>` for exact IDs and current frontmatter
-descriptions, adding `--brief` for one-line summaries. There are 86 selectable canonical skills across 12 types.
+descriptions, adding `--brief` for one-line summaries. There are 87 selectable canonical skills across 12 types.
 
 ## Repository map
 

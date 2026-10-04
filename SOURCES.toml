@@ -102,3 +102,20 @@ selection = "Complete skills/watch directory, byte-identical to upstream, plus u
 license = "MIT"
 license_file = "library/media/video/watch/LICENSE"
 notes = "Imported 2026-10-04 using skill-installer; all 11 skill files verified against pinned upstream. Runtime engines and transcription backends require first-use setup; no credentials or models included."
+
+[[imports]]
+source_id = "coreyhaines31-marketingskills"
+source = "https://github.com/coreyhaines31/marketingskills"
+revision = "dda3841f0b294e01e93b1541486beefbfab0915e"
+destination = "library/sales-and-marketing/coreyhaines31"
+selection = "49 complete skill directories; seo-audit retained as a divergent variant; shared tools and root documentation in integrations/marketingskills"
+license = "MIT"
+license_file = "integrations/marketingskills/LICENSE"
+revision_manifest = "integrations/marketingskills/import-manifest.json"
+notes = "Observed 2026-10-04. Upstream skill bytes unchanged; root LICENSE added to each portable directory. No project installation or tool execution."
+
+[[variants]]
+runtime_name = "seo-audit"
+source = "https://github.com/coreyhaines31/marketingskills/tree/dda3841f0b294e01e93b1541486beefbfab0915e/skills/seo-audit"
+destination = "variants/coreyhaines31/sales-and-marketing/seo-audit"
+reason = "Upstream revision differs from existing canonical seo-audit; preserve both without replacing the default."

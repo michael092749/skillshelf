@@ -1,5 +1,8 @@
 # Catalog rules
 
+- For importing, adding or refreshing catalog skills, follow [ADDING-SKILLS.md](ADDING-SKILLS.md), including provenance, collision handling and picker discovery checks.
+
+
 - Prefix every shell command with `rtk`.
 - For catalog navigation or skill selection, read `index.md`; use
   `scripts/install_skills.py --help` and `scripts/install_mcp.py --help` as the

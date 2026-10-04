@@ -267,6 +267,12 @@ Installs never overwrite, so after editing a skill in `library/`, delete the
 stale installed copy before reinstalling — including the picker's own copy in
 `~/.agents/skills/` and `~/.claude/skills/`.
 
+## Add skills to the library
+
+Follow [ADDING-SKILLS.md](ADDING-SKILLS.md) to import complete skills, preserve
+provenance and conflicts, and validate discovery. `setup-project-skills` reads
+the catalog live, so new valid library entries appear on its next run.
+
 ## Layout
 
 ```text

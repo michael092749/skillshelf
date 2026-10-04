@@ -109,6 +109,13 @@ Offer design, idea validation, lead generation, and SEO auditing.
 
 `hormozi-offer`, `idea-validator`, `lead-generation`, `seo-audit`
 
+### `sales-and-marketing/coreyhaines31` (49)
+
+Pinned Corey Haines workflows for positioning, content, CRO, SEO, growth, sales,
+retention and measurement. Start with shared product context.
+
+`ab-testing`, `ad-creative`, `ads`, `ai-seo`, `analytics`, `aso`, `attribution`, `churn-prevention`, `co-marketing`, `cold-email`, `community-marketing`, `competitor-profiling`, `competitors`, `content-strategy`, `copy-editing`, `copywriting`, `cro`, `customer-research`, `directory-submissions`, `emails`, `events`, `free-tools`, `image`, `influencer-marketing`, `launch`, `lead-magnets`, `marketing-council`, `marketing-ideas`, `marketing-loops`, `marketing-plan`, `marketing-psychology`, `offers`, `onboarding`, `paywalls`, `popups`, `pricing`, `product-marketing`, `programmatic-seo`, `prospecting`, `public-relations`, `referrals`, `revops`, `sales-enablement`, `schema`, `signup`, `site-architecture`, `sms`, `social`, `video`
+
 ### `second-brain-ingest` (1)
 
 Always installed by the project picker, and deliberately its own type so no
@@ -116,7 +123,7 @@ category sweep can pull it in by accident:
 `second-brain-ingest`
 
 Run `list skills --type <type>` for exact IDs and current frontmatter
-descriptions, adding `--brief` for one-line summaries. There are 87 selectable canonical skills across 12 types.
+descriptions, adding `--brief` for one-line summaries. There are 136 selectable canonical skills across 13 types.
 
 ## Repository map
 
@@ -136,3 +143,5 @@ descriptions, adding `--brief` for one-line summaries. There are 87 selectable c
 - `CATALOG.md` and `SOURCES.toml` — catalog summary and imported provenance.
 - `reports/`, `templates/`, and `tests/` — measurements, setup templates, and
   deterministic checks.
+
+Corey Haines import provenance, shared tool dependencies and the preserved SEO variant: [import notes](integrations/marketingskills/README.md).

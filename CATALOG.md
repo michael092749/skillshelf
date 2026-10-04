@@ -13,7 +13,7 @@ directory become discoverable there.
 | `research/exa/` | 4 | Exa search, contents, API building, and company research |
 | `research/knowledge/` | 1 | Knowledge graph visualization |
 | `sales-and-marketing/` | 4 | Offers, lead generation, idea validation, and SEO auditing |
-| `sales-and-marketing/coreyhaines31/` | 49 | Pinned MIT marketing workflows; shared tools and one divergent SEO variant preserved |
+| `sales-and-marketing/marketing-workflows/` | 49 | Pinned MIT marketing workflows; shared tools and one divergent SEO variant preserved |
 | `content/carousels/` | 1 | Portable ebook carousel research, generation, review and export workflow |
 | `content/writing/` | 3 | Fragments, beats, and shape workflows |
 | `media/video/` | 2 | Video shot planning assets and workflow, vendored in full from upstream `video-shotcraft` (Apache-2.0, pinned revision); video understanding through `watch` (MIT, pinned revision) |

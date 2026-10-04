@@ -6,265 +6,265 @@
     {
       "name": "ab-testing",
       "source": "skills/ab-testing",
-      "destination": "library/sales-and-marketing/coreyhaines31/ab-testing",
+      "destination": "library/sales-and-marketing/marketing-workflows/ab-testing",
       "variant": false
     },
     {
       "name": "ad-creative",
       "source": "skills/ad-creative",
-      "destination": "library/sales-and-marketing/coreyhaines31/ad-creative",
+      "destination": "library/sales-and-marketing/marketing-workflows/ad-creative",
       "variant": false
     },
     {
       "name": "ads",
       "source": "skills/ads",
-      "destination": "library/sales-and-marketing/coreyhaines31/ads",
+      "destination": "library/sales-and-marketing/marketing-workflows/ads",
       "variant": false
     },
     {
       "name": "ai-seo",
       "source": "skills/ai-seo",
-      "destination": "library/sales-and-marketing/coreyhaines31/ai-seo",
+      "destination": "library/sales-and-marketing/marketing-workflows/ai-seo",
       "variant": false
     },
     {
       "name": "analytics",
       "source": "skills/analytics",
-      "destination": "library/sales-and-marketing/coreyhaines31/analytics",
+      "destination": "library/sales-and-marketing/marketing-workflows/analytics",
       "variant": false
     },
     {
       "name": "aso",
       "source": "skills/aso",
-      "destination": "library/sales-and-marketing/coreyhaines31/aso",
+      "destination": "library/sales-and-marketing/marketing-workflows/aso",
       "variant": false
     },
     {
       "name": "attribution",
       "source": "skills/attribution",
-      "destination": "library/sales-and-marketing/coreyhaines31/attribution",
+      "destination": "library/sales-and-marketing/marketing-workflows/attribution",
       "variant": false
     },
     {
       "name": "churn-prevention",
       "source": "skills/churn-prevention",
-      "destination": "library/sales-and-marketing/coreyhaines31/churn-prevention",
+      "destination": "library/sales-and-marketing/marketing-workflows/churn-prevention",
       "variant": false
     },
     {
       "name": "co-marketing",
       "source": "skills/co-marketing",
-      "destination": "library/sales-and-marketing/coreyhaines31/co-marketing",
+      "destination": "library/sales-and-marketing/marketing-workflows/co-marketing",
       "variant": false
     },
     {
       "name": "cold-email",
       "source": "skills/cold-email",
-      "destination": "library/sales-and-marketing/coreyhaines31/cold-email",
+      "destination": "library/sales-and-marketing/marketing-workflows/cold-email",
       "variant": false
     },
     {
       "name": "community-marketing",
       "source": "skills/community-marketing",
-      "destination": "library/sales-and-marketing/coreyhaines31/community-marketing",
+      "destination": "library/sales-and-marketing/marketing-workflows/community-marketing",
       "variant": false
     },
     {
       "name": "competitor-profiling",
       "source": "skills/competitor-profiling",
-      "destination": "library/sales-and-marketing/coreyhaines31/competitor-profiling",
+      "destination": "library/sales-and-marketing/marketing-workflows/competitor-profiling",
       "variant": false
     },
     {
       "name": "competitors",
       "source": "skills/competitors",
-      "destination": "library/sales-and-marketing/coreyhaines31/competitors",
+      "destination": "library/sales-and-marketing/marketing-workflows/competitors",
       "variant": false
     },
     {
       "name": "content-strategy",
       "source": "skills/content-strategy",
-      "destination": "library/sales-and-marketing/coreyhaines31/content-strategy",
+      "destination": "library/sales-and-marketing/marketing-workflows/content-strategy",
       "variant": false
     },
     {
       "name": "copy-editing",
       "source": "skills/copy-editing",
-      "destination": "library/sales-and-marketing/coreyhaines31/copy-editing",
+      "destination": "library/sales-and-marketing/marketing-workflows/copy-editing",
       "variant": false
     },
     {
       "name": "copywriting",
       "source": "skills/copywriting",
-      "destination": "library/sales-and-marketing/coreyhaines31/copywriting",
+      "destination": "library/sales-and-marketing/marketing-workflows/copywriting",
       "variant": false
     },
     {
       "name": "cro",
       "source": "skills/cro",
-      "destination": "library/sales-and-marketing/coreyhaines31/cro",
+      "destination": "library/sales-and-marketing/marketing-workflows/cro",
       "variant": false
     },
     {
       "name": "customer-research",
       "source": "skills/customer-research",
-      "destination": "library/sales-and-marketing/coreyhaines31/customer-research",
+      "destination": "library/sales-and-marketing/marketing-workflows/customer-research",
       "variant": false
     },
     {
       "name": "directory-submissions",
       "source": "skills/directory-submissions",
-      "destination": "library/sales-and-marketing/coreyhaines31/directory-submissions",
+      "destination": "library/sales-and-marketing/marketing-workflows/directory-submissions",
       "variant": false
     },
     {
       "name": "emails",
       "source": "skills/emails",
-      "destination": "library/sales-and-marketing/coreyhaines31/emails",
+      "destination": "library/sales-and-marketing/marketing-workflows/emails",
       "variant": false
     },
     {
       "name": "events",
       "source": "skills/events",
-      "destination": "library/sales-and-marketing/coreyhaines31/events",
+      "destination": "library/sales-and-marketing/marketing-workflows/events",
       "variant": false
     },
     {
       "name": "free-tools",
       "source": "skills/free-tools",
-      "destination": "library/sales-and-marketing/coreyhaines31/free-tools",
+      "destination": "library/sales-and-marketing/marketing-workflows/free-tools",
       "variant": false
     },
     {
       "name": "image",
       "source": "skills/image",
-      "destination": "library/sales-and-marketing/coreyhaines31/image",
+      "destination": "library/sales-and-marketing/marketing-workflows/image",
       "variant": false
     },
     {
       "name": "influencer-marketing",
       "source": "skills/influencer-marketing",
-      "destination": "library/sales-and-marketing/coreyhaines31/influencer-marketing",
+      "destination": "library/sales-and-marketing/marketing-workflows/influencer-marketing",
       "variant": false
     },
     {
       "name": "launch",
       "source": "skills/launch",
-      "destination": "library/sales-and-marketing/coreyhaines31/launch",
+      "destination": "library/sales-and-marketing/marketing-workflows/launch",
       "variant": false
     },
     {
       "name": "lead-magnets",
       "source": "skills/lead-magnets",
-      "destination": "library/sales-and-marketing/coreyhaines31/lead-magnets",
+      "destination": "library/sales-and-marketing/marketing-workflows/lead-magnets",
       "variant": false
     },
     {
       "name": "marketing-council",
       "source": "skills/marketing-council",
-      "destination": "library/sales-and-marketing/coreyhaines31/marketing-council",
+      "destination": "library/sales-and-marketing/marketing-workflows/marketing-council",
       "variant": false
     },
     {
       "name": "marketing-ideas",
       "source": "skills/marketing-ideas",
-      "destination": "library/sales-and-marketing/coreyhaines31/marketing-ideas",
+      "destination": "library/sales-and-marketing/marketing-workflows/marketing-ideas",
       "variant": false
     },
     {
       "name": "marketing-loops",
       "source": "skills/marketing-loops",
-      "destination": "library/sales-and-marketing/coreyhaines31/marketing-loops",
+      "destination": "library/sales-and-marketing/marketing-workflows/marketing-loops",
       "variant": false
     },
     {
       "name": "marketing-plan",
       "source": "skills/marketing-plan",
-      "destination": "library/sales-and-marketing/coreyhaines31/marketing-plan",
+      "destination": "library/sales-and-marketing/marketing-workflows/marketing-plan",
       "variant": false
     },
     {
       "name": "marketing-psychology",
       "source": "skills/marketing-psychology",
-      "destination": "library/sales-and-marketing/coreyhaines31/marketing-psychology",
+      "destination": "library/sales-and-marketing/marketing-workflows/marketing-psychology",
       "variant": false
     },
     {
       "name": "offers",
       "source": "skills/offers",
-      "destination": "library/sales-and-marketing/coreyhaines31/offers",
+      "destination": "library/sales-and-marketing/marketing-workflows/offers",
       "variant": false
     },
     {
       "name": "onboarding",
       "source": "skills/onboarding",
-      "destination": "library/sales-and-marketing/coreyhaines31/onboarding",
+      "destination": "library/sales-and-marketing/marketing-workflows/onboarding",
       "variant": false
     },
     {
       "name": "paywalls",
       "source": "skills/paywalls",
-      "destination": "library/sales-and-marketing/coreyhaines31/paywalls",
+      "destination": "library/sales-and-marketing/marketing-workflows/paywalls",
       "variant": false
     },
     {
       "name": "popups",
       "source": "skills/popups",
-      "destination": "library/sales-and-marketing/coreyhaines31/popups",
+      "destination": "library/sales-and-marketing/marketing-workflows/popups",
       "variant": false
     },
     {
       "name": "pricing",
       "source": "skills/pricing",
-      "destination": "library/sales-and-marketing/coreyhaines31/pricing",
+      "destination": "library/sales-and-marketing/marketing-workflows/pricing",
       "variant": false
     },
     {
       "name": "product-marketing",
       "source": "skills/product-marketing",
-      "destination": "library/sales-and-marketing/coreyhaines31/product-marketing",
+      "destination": "library/sales-and-marketing/marketing-workflows/product-marketing",
       "variant": false
     },
     {
       "name": "programmatic-seo",
       "source": "skills/programmatic-seo",
-      "destination": "library/sales-and-marketing/coreyhaines31/programmatic-seo",
+      "destination": "library/sales-and-marketing/marketing-workflows/programmatic-seo",
       "variant": false
     },
     {
       "name": "prospecting",
       "source": "skills/prospecting",
-      "destination": "library/sales-and-marketing/coreyhaines31/prospecting",
+      "destination": "library/sales-and-marketing/marketing-workflows/prospecting",
       "variant": false
     },
     {
       "name": "public-relations",
       "source": "skills/public-relations",
-      "destination": "library/sales-and-marketing/coreyhaines31/public-relations",
+      "destination": "library/sales-and-marketing/marketing-workflows/public-relations",
       "variant": false
     },
     {
       "name": "referrals",
       "source": "skills/referrals",
-      "destination": "library/sales-and-marketing/coreyhaines31/referrals",
+      "destination": "library/sales-and-marketing/marketing-workflows/referrals",
       "variant": false
     },
     {
       "name": "revops",
       "source": "skills/revops",
-      "destination": "library/sales-and-marketing/coreyhaines31/revops",
+      "destination": "library/sales-and-marketing/marketing-workflows/revops",
       "variant": false
     },
     {
       "name": "sales-enablement",
       "source": "skills/sales-enablement",
-      "destination": "library/sales-and-marketing/coreyhaines31/sales-enablement",
+      "destination": "library/sales-and-marketing/marketing-workflows/sales-enablement",
       "variant": false
     },
     {
       "name": "schema",
       "source": "skills/schema",
-      "destination": "library/sales-and-marketing/coreyhaines31/schema",
+      "destination": "library/sales-and-marketing/marketing-workflows/schema",
       "variant": false
     },
     {
@@ -276,31 +276,31 @@
     {
       "name": "signup",
       "source": "skills/signup",
-      "destination": "library/sales-and-marketing/coreyhaines31/signup",
+      "destination": "library/sales-and-marketing/marketing-workflows/signup",
       "variant": false
     },
     {
       "name": "site-architecture",
       "source": "skills/site-architecture",
-      "destination": "library/sales-and-marketing/coreyhaines31/site-architecture",
+      "destination": "library/sales-and-marketing/marketing-workflows/site-architecture",
       "variant": false
     },
     {
       "name": "sms",
       "source": "skills/sms",
-      "destination": "library/sales-and-marketing/coreyhaines31/sms",
+      "destination": "library/sales-and-marketing/marketing-workflows/sms",
       "variant": false
     },
     {
       "name": "social",
       "source": "skills/social",
-      "destination": "library/sales-and-marketing/coreyhaines31/social",
+      "destination": "library/sales-and-marketing/marketing-workflows/social",
       "variant": false
     },
     {
       "name": "video",
       "source": "skills/video",
-      "destination": "library/sales-and-marketing/coreyhaines31/video",
+      "destination": "library/sales-and-marketing/marketing-workflows/video",
       "variant": false
     }
   ],

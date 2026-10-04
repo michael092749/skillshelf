@@ -20,9 +20,9 @@ python3.11 scripts/install_skills.py list skills --search marketing --brief
 ```
 
 Place a complete skill at `library/<category>/<skill>/SKILL.md`. Categories may
-be nested: `library/sales-and-marketing/coreyhaines31/copywriting/SKILL.md` has
-ID `sales-and-marketing/coreyhaines31/copywriting` and type
-`sales-and-marketing/coreyhaines31`. The runtime name comes from frontmatter.
+be nested: `library/sales-and-marketing/marketing-workflows/copywriting/SKILL.md` has
+ID `sales-and-marketing/marketing-workflows/copywriting` and type
+`sales-and-marketing/marketing-workflows`. The runtime name comes from frontmatter.
 Use a unique lowercase name containing only letters, digits and hyphens, up to
 64 characters. Include a nonempty description explaining when to use the skill.
 
@@ -67,8 +67,8 @@ Run from the catalog root with Python 3.11 or newer:
 ```bash
 python3.11 scripts/audit_catalog.py catalog
 python3.11 -m unittest discover -s tests -v
-python3.11 scripts/install_skills.py list skills --type sales-and-marketing/coreyhaines31 --brief
-python3.11 scripts/install_skills.py install --project /tmp/skills-preview --host both --skill sales-and-marketing/coreyhaines31/copywriting --dry-run
+python3.11 scripts/install_skills.py list skills --type sales-and-marketing/marketing-workflows --brief
+python3.11 scripts/install_skills.py install --project /tmp/skills-preview --host both --skill sales-and-marketing/marketing-workflows/copywriting --dry-run
 ```
 
 Replace the example type and ID with the imported skill. Completion means the

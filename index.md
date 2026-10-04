@@ -109,7 +109,7 @@ Offer design, idea validation, lead generation, and SEO auditing.
 
 `hormozi-offer`, `idea-validator`, `lead-generation`, `seo-audit`
 
-### `sales-and-marketing/coreyhaines31` (49)
+### `sales-and-marketing/marketing-workflows` (49)
 
 Pinned Corey Haines workflows for positioning, content, CRO, SEO, growth, sales,
 retention and measurement. Start with shared product context.

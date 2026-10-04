@@ -2,7 +2,7 @@
 
 Imported 2026-10-04 from https://github.com/coreyhaines31/marketingskills at `dda3841f0b294e01e93b1541486beefbfab0915e`.
 
-49 complete skills are selectable under `sales-and-marketing/coreyhaines31`.
+49 complete skills are selectable under `sales-and-marketing/marketing-workflows`.
 The upstream `seo-audit` is preserved under `variants/coreyhaines31/sales-and-marketing/seo-audit`; the existing canonical skill stays unchanged. Variants require deliberate selection and are not included by the installer.
 
 All upstream skill files are byte-identical; each directory also carries the upstream MIT LICENSE. `import-manifest.json` records destinations and upstream SHA-256 hashes. References, evaluation fixtures and assets travel with each skill.
